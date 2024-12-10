@@ -40,7 +40,10 @@ module.exports = ({ env }) => {
         },
         schema: env('DATABASE_SCHEMA', 'public'),
       },
-      pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
+      pool: {
+        min: 2,
+        max: 10, // Increase this if you have more traffic
+      },
     },
     sqlite: {
       connection: {
